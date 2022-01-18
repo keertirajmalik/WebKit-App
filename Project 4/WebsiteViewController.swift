@@ -13,6 +13,7 @@ class WebsiteViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var progressView: UIProgressView!
     var websites = ["apple.com","google.com"]
+    var loadWebsite: String = ""
     
     override func loadView() {
         webView = WKWebView()
@@ -37,7 +38,7 @@ class WebsiteViewController: UIViewController, WKNavigationDelegate {
         navigationController?.isToolbarHidden = false
         // Do any additional setup after loading the view.
         
-        let url = URL(string: "https://" + websites[0])!
+        let url = URL(string: "https://" + loadWebsite)!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
         
