@@ -81,7 +81,8 @@ class ViewController: UIViewController, WKNavigationDelegate {
                     return
                 }
             }
-            
+            let ac = UIAlertController(title: "URL is Blocked", message: nil, preferredStyle: .alert)
+            present(ac, animated: true)
         }
         decisionHandler(.cancel)
     }
